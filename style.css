@@ -315,6 +315,8 @@ a { text-decoration: none; }
 .advantages-section {
     max-width: 1200px;
     margin: 0 auto;
+    position: relative;
+    padding-bottom: 60px;
 }
 
 .text-center {
@@ -451,6 +453,23 @@ footer {
     color: #888;
 }
 
+.mascot-container {
+    position: absolute;
+    bottom: -8rem; 
+    right: -100px;    
+    width: 20rem;  
+    height: 20rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: filter 0.4s ease, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.mascot-container:hover {
+    transform: scale(1.15);
+    opacity: 1;
+}
+
+
 @media (max-width: 900px) {
     #hero {
         flex-direction: column;
@@ -529,7 +548,15 @@ footer {
     }
     .cta-container button{
         max-width: 120px;
-        font-size: 0.8rem;
+        font-size: 0.7rem;
+    }
+
+    .mascot-container {
+        width: 20rem;
+        height: 20rem;
+        bottom: -100px;
+        right: 0px;
+        margin-right: -70px; 
     }
 }
 

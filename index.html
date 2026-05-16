@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="logo.png" />
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
 <body>
     <section id="hero">
@@ -168,11 +169,21 @@
                         <span>將音樂概念進行統整與分類，透過網頁互動機制，讓使用者實際操作並雙通道學習，降低學習門檻。</span>
                     </div>
                 </div>
+                <div class="mascot-container" id="mascot">
+                    <lottie-player 
+                        id="lottie-anim"
+                        src="./json/yellowwave.json"
+                        background="transparent"  
+                        speed="1"  
+                        style="width: 100%; height: 100%;"  
+                        loop  
+                        autoplay>
+                    </lottie-player>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- 第三區塊：常見問題 FAQ -->
     <section id="faq">
         <div class="faq-container">
             <h2 class="faq-title serif">常見問題解答</h2>
@@ -229,17 +240,12 @@
                 const content = this.nextElementSibling;
                 const icon = this.querySelector('span:last-child');
                 
-                // 切換當前的狀態
                 if (content.style.maxHeight) {
-                    // 如果已經展開，就收合
                     content.style.maxHeight = null;
                     icon.textContent = "+";
                 } else {
-                    // 先關閉其他的
                     document.querySelectorAll('.accordion-content').forEach(c => c.style.maxHeight = null);
                     document.querySelectorAll('.accordion-header span:last-child').forEach(i => i.textContent = "+");
-                    
-                    // 展開當前點擊的
                     content.style.maxHeight = content.scrollHeight + "px";
                     icon.textContent = "−";
                 }
@@ -308,6 +314,29 @@
                         btn.disabled = false;
                     });
             });
+        });
+
+        const mascotContainer = document.getElementById('mascot');
+        const lottiePlayer = document.getElementById('lottie-anim');
+
+        const mascotFiles = [
+            'yellowwave.json',
+            'bluewave.json',
+            'pinkwave.json',
+            'purplewave.json',
+            'lightgreenwave.json'
+        ];
+
+        let currentMascotIndex = 0;
+
+        mascotContainer.addEventListener('click', () => {
+            currentMascotIndex = (currentMascotIndex + 1) % mascotFiles.length;
+            const newSrc = `./json/${mascotFiles[currentMascotIndex]}`;
+            lottiePlayer.load(newSrc);
+            mascotContainer.style.transform = 'scale(0.9)';
+            setTimeout(() => {
+                mascotContainer.style.transform = 'scale(1.15) translateY(-10px)';
+            }, 150);
         });
     </script>
 </body>
