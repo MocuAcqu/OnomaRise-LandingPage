@@ -528,14 +528,14 @@ footer {
         font-size: 0.8rem;
     }
     .cta-container button{
-        max-width: 130px;
+        max-width: 120px;
         font-size: 0.8rem;
     }
 }
 
 @media (max-width: 480px) {
     .main-logo{
-        margin-top: -5rem;
+        margin-top: -7rem;
     }
 
     .hero-content h1 {

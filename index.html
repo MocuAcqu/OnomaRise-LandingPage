@@ -15,8 +15,8 @@
             <h1>讓抽象的音樂理論<br>直觀可見</h1>
             <p>以調性網路為核心，結合音訊辨識與雙通道的樂理知識學習，帶你用全新的幾何視角看見音樂、感受和聲。</p>
             
-            <form class="form-group" onsubmit="event.preventDefault(); alert('感謝您的參與！測試版上線時我們將第一時間通知您。');">
-                <input type="email" placeholder="請輸入您的 Email" required>
+            <form class="form-group" onsubmit="event.preventDefault();">
+                <input type="email" name="Email" id="waitlist-form" placeholder="請輸入您的 Email" required>
                 <button type="submit" class="btn btn-primary">申請搶先試用</button>
             </form>
             
@@ -204,8 +204,8 @@
             <h2 class="serif">準備好探索音樂的新維度了嗎？</h2>
             <p>無論您是初學者還是音樂教育者<br>OnomaRise 都能為您帶來全新的視覺化體驗。</p>
             
-            <form class="form-group" onsubmit="event.preventDefault(); alert('感謝您的訂閱！測試版上線時我們將第一時間通知您。');">
-                <input type="email" placeholder="請輸入您的 Email 獲取測試資格" required>
+            <form class="form-group" onsubmit="event.preventDefault();">
+                <input type="email" id="waitlist-form" name="Email" placeholder="請輸入您的 Email 獲取測試資格" required>
                 <button type="submit" class="btn" style="background: white; color: va(--color-purple);">加入等待名單</button>
             </form>
             
@@ -282,6 +282,33 @@
         }
 
         resetShowcaseTimer();
+
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzVxDVRdPgw8geo8ewws0yp2dUgpguxg4-O79ii5WyEAnIRuq4_258knowGVQUHjznKtg/exec';
+        const forms = document.querySelectorAll('form'); 
+
+        forms.forEach(form => {
+            form.addEventListener('submit', e => {
+                e.preventDefault(); 
+                
+                const btn = form.querySelector('button[type="submit"]');
+                const originalText = btn.innerText;
+                btn.innerText = '送出中...';
+                btn.disabled = true;
+
+                fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                    .then(response => {
+                        alert('感謝您的訂閱！測試版上線時我們將第一時間通知您。');
+                        form.reset(); 
+                        btn.innerText = originalText;
+                        btn.disabled = false;
+                    })
+                    .catch(error => {
+                        alert('發生錯誤，請稍後再試！');
+                        btn.innerText = originalText;
+                        btn.disabled = false;
+                    });
+            });
+        });
     </script>
 </body>
 </html>
