@@ -541,7 +541,7 @@ footer {
     }
 
     .advantages-section p{
-        font-size: 0.8rem;
+        font-size: 0.95rem;
     }
 
     #faq, #cta {
@@ -565,7 +565,6 @@ footer {
         height: 20rem;
         bottom: -90px;
         right: 0px;
-        margin-right: -70px; 
     }
 }
 
