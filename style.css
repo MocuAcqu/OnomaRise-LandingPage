@@ -455,17 +455,103 @@ footer {
     #hero {
         flex-direction: column;
         text-align: center;
-        padding-top: 100px;
+        padding: 120px 5% 50px 5%; 
     }
+    
     .hero-content {
         padding-right: 0;
-        margin-bottom: 50px;
+        margin-bottom: 40px;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
+
+    .main-logo {
+        margin-top: 0;
+        max-width: 16rem;
+    }
+    .hero-content h1 {
+        margin-top: 10px;
+        font-size: 2.2rem; 
+    }
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+
+    .hero-content form {
+        flex-direction: column;
+        width: 100%;
+        max-width: 350px;
+    }
+    .form-group input, .form-group button {
+        width: 100%;
+    }
+
     .hero-visuals {
+        padding-left: 0;
         width: 100%;
         max-height: 400px;
+        justify-content: center; 
+        gap: 20px;
+    }
+
+    #features {
+        padding: 60px 5%; 
+    }
+
+    .showcase-content {
+        flex-direction: column-reverse; 
+        gap: 30px;
+    }
+
+    .browser-body {
+        height: 250px; 
+    }
+
+    .tab-item {
+        padding: 15px 20px;
+    }
+
+    .advantage-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #faq, #cta {
+        padding: 60px 5%;
+    }
+
+    .text-center h2, .faq-title {
+        font-size: 2rem; 
+    }
+    .cta-container input{
+        max-width: 300px;
+        font-size: 0.8rem;
+    }
+    .cta-container button{
+        max-width: 130px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-visuals {
+        height: 320px; 
+        gap: 15px;
+    }
+
+    .browser-body {
+        height: 200px; 
+    }
+
+    #cta h2 {
+        font-size: 1.6rem;
+    }
+
+    .cta-container{
+        max-width: 360px;
     }
 }
