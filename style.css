@@ -533,6 +533,15 @@ footer {
 
     .advantage-grid {
         grid-template-columns: 1fr;
+        gap:15px;
+    }
+
+    .advantage-card {
+        padding: 20px 15px;
+    }
+
+    .advantages-section p{
+        font-size: 0.8rem;
     }
 
     #faq, #cta {
@@ -554,7 +563,7 @@ footer {
     .mascot-container {
         width: 20rem;
         height: 20rem;
-        bottom: -100px;
+        bottom: -90px;
         right: 0px;
         margin-right: -70px; 
     }
@@ -584,5 +593,18 @@ footer {
 
     .cta-container{
         max-width: 360px;
+    }
+
+    .cta-container input{
+        max-width: 300px;
+        font-size: 0.7rem;
+    }
+    .cta-container button{
+        max-width: 120px;
+        font-size: 0.6rem;
+    }
+
+    .footer{
+        font-size: 0.6rem;
     }
 }
