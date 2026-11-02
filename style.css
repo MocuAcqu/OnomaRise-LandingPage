@@ -600,3 +600,28 @@ footer {
         font-size: 0.6rem;
     }
 }
+
+.sound-toggle-btn {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.55);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    backdrop-filter: blur(6px);
+    transition: all 0.25s ease;
+    z-index: 10;
+}
+
+.sound-toggle-btn:hover {
+    background: rgba(0, 0, 0, 0.85);
+    transform: scale(1.1);
+}
